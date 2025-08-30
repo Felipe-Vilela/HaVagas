@@ -16,10 +16,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/black"
-            android:textColor="@color/white"
-            android:text="Há Vagas"
-            android:textSize="30sp"
             android:gravity="center"
+            android:text="Há Vagas"
+            android:textColor="@color/white"
+            android:textSize="30sp"
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -29,44 +29,98 @@
             android:id="@+id/nome_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome"
+            android:layout_margin="5dp"
             android:autofillHints="name"
+            android:hint="Nome"
             android:inputType="textPersonName"
             android:padding="5dp"
-            android:layout_margin="5dp"
 
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ha_vagas_tv" />
 
-       <LinearLayout
-           android:id="@+id/receber_email_ll"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="vertical"
+        <LinearLayout
+            android:id="@+id/receber_email_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
 
-           android:layout_margin="5dp"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/nome_et">
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nome_et">
 
-           <EditText
-               android:id="@+id/email_et"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:hint="E-mail"
-               android:autofillHints="emailAddress"
-               android:inputType="textEmailAddress"
-                />
+            <EditText
+                android:id="@+id/email_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="emailAddress"
+                android:hint="E-mail"
+                android:inputType="textEmailAddress" />
 
-           <CheckBox
-               android:id="@+id/receber_emails_cb"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="5dp"
-               android:text="Desejo receber e-mails com atualizações de oportunidades"
-               />
-       </LinearLayout>
+            <CheckBox
+                android:id="@+id/receber_emails_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Desejo receber e-mails com atualizações de oportunidades" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/telefones_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/receber_email_ll">
+
+            <EditText
+                android:id="@+id/telefone_fixo_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefone Fixo"
+                android:autofillHints="phone"
+                android:inputType="phone" />
+
+            <RadioGroup
+                android:id="@+id/tipo_telefone_rg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/comercial_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Comercial" />
+
+                <RadioButton
+                    android:id="@+id/residencial_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Residencial" />
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/adicionar_celular_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Adicionar Telefone Celular" />
+
+            <EditText
+                android:id="@+id/celular_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefone Celular"
+                android:autofillHints="phone"
+                android:inputType="phone"
+                android:visibility="gone" />
+
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
