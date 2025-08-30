@@ -90,27 +90,35 @@
                 android:id="@+id/tipo_telefone_rg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:padding="5dp"
+                android:layout_margin="5dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/telefone_fixo_et">
 
                 <RadioButton
                     android:id="@+id/comercial_rb"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Comercial" />
+                    android:text="Comercial"
+                    android:layout_weight="1" />
 
                 <RadioButton
                     android:id="@+id/residencial_rb"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Residencial" />
+                    android:text="Residencial"
+                    android:layout_weight="1" />
             </RadioGroup>
 
             <CheckBox
                 android:id="@+id/adicionar_celular_cb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="5dp"
                 android:text="Adicionar Telefone Celular" />
 
             <EditText
@@ -174,8 +182,114 @@
             android:clickable="true"
             android:padding="5dp"
             android:layout_margin="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sexo_rg"/>
 
+        <Spinner
+            android:id="@+id/formacao_sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/formacoes"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/data_nascimento_et" />
+
+        <LinearLayout
+            android:id="@+id/ano_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/formacao_sp">
+
+            <EditText
+                android:id="@+id/ano_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ano de Formatura/Conclusão"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/instituicao_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/ano_ll">
+
+            <EditText
+                android:id="@+id/instituicao_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Instituição"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/titulo_orientador_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/instituicao_ll">
+
+            <EditText
+                android:id="@+id/titulo_monografia_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Título da Monografia"
+                android:inputType="textCapSentences" />
+
+            <EditText
+                android:id="@+id/orientador_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Orientador"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/vagas_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Vagas de interesse"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:minLines="3"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titulo_orientador_ll" />
+
+        <Button
+            android:id="@+id/salvar_bt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Salvar"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vagas_et"/>
+
+        <Button
+            android:id="@+id/limpar_bt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Limpar"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/salvar_bt"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
