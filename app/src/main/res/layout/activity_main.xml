@@ -124,6 +124,46 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/sexo_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sexo"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/telefones_ll"/>
+
+        <RadioGroup
+            android:id="@+id/sexo_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sexo_tv">
+
+            <RadioButton
+                android:id="@+id/masculino_rb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Masculino"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/feminino_rb"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Feminino"
+                android:layout_weight="1" />
+
+        </RadioGroup>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
