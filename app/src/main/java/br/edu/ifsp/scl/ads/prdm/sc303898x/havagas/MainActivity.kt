@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
                 val datePickerDialog = DatePickerDialog(
                     this@MainActivity,
+                    R.style.DatePickerTheme,
                     { _, selectedYear, selectedMonth, selectedDay ->
                         val dataSelecionada = Calendar.getInstance()
                         dataSelecionada.set(selectedYear, selectedMonth, selectedDay)
@@ -38,9 +39,15 @@ class MainActivity : AppCompatActivity() {
                 datePickerDialog.show()
             }
             salvarBt.setOnClickListener {
+                val nomeCompleto = nomeEt.text.toString()
+                val email = emailEt.text.toString()
+                val desejaReceberEmails = receberEmailsCb.isChecked
                 val dataNascimento = dataNascimentoEt.text.toString()
 
                 val mensagemDoPopup =
+                    "Nome Completo: ${nomeCompleto}\n" +
+                    "E-mail:  ${email.ifEmpty { "Não Informado" }}\n" +
+                    "Deseja receber emails: ${if (desejaReceberEmails) "Sim" else "Não"}\n" +
                     "Data de Nascimento: ${dataNascimento.ifEmpty { "Não selecionada" }}"
 
                 val builder = AlertDialog.Builder(this@MainActivity)

@@ -5,22 +5,24 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FCFCFC"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp">
 
         <TextView
             android:id="@+id/ha_vagas_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black"
+            android:background="#2A2A2C"
             android:gravity="center"
             android:text="Há Vagas"
-            android:textColor="@color/white"
+            android:textColor="#FCFCFC"
             android:textSize="30sp"
-
+            android:paddingVertical="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,8 +35,10 @@
             android:autofillHints="name"
             android:hint="Nome"
             android:inputType="textPersonName"
-            android:padding="5dp"
-
+            android:padding="12dp"
+            android:textColor="#2A2A2C"
+            android:textColorHint="#5C5C5F"
+            android:background="@drawable/field_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ha_vagas_tv" />
@@ -44,7 +48,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,14 +59,20 @@
                 android:layout_height="wrap_content"
                 android:autofillHints="emailAddress"
                 android:hint="E-mail"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:padding="12dp"
+                android:textColor="#2A2A2C"
+                android:textColorHint="#5C5C5F"
+                android:background="@drawable/field_background" />
 
             <CheckBox
                 android:id="@+id/receber_emails_cb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Desejo receber e-mails com atualizações de oportunidades" />
+                android:text="Desejo receber e-mails com atualizações de oportunidades"
+                android:buttonTint="#FF9F0A"
+                android:textColor="#2A2A2C" />
         </LinearLayout>
 
         <LinearLayout
@@ -72,8 +81,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="5dp"
-
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/receber_email_ll">
@@ -84,7 +91,11 @@
                 android:layout_height="wrap_content"
                 android:hint="Telefone Fixo"
                 android:autofillHints="phone"
-                android:inputType="phone" />
+                android:inputType="phone"
+                android:padding="12dp"
+                android:textColor="#2A2A2C"
+                android:textColorHint="#5C5C5F"
+                android:background="@drawable/field_background" />
 
             <RadioGroup
                 android:id="@+id/tipo_telefone_rg"
@@ -102,16 +113,20 @@
                     android:id="@+id/comercial_rb"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:checked="true"
+                    android:layout_weight="1"
                     android:text="Comercial"
-                    android:layout_weight="1" />
+                    android:checked="true"
+                    android:textColor="#2A2A2C"
+                    app:buttonTint="@color/radio_button_color"  />
 
                 <RadioButton
                     android:id="@+id/residencial_rb"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="Residencial"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textColor="#2A2A2C"
+                    app:buttonTint="@color/radio_button_color" />
             </RadioGroup>
 
             <CheckBox
@@ -119,7 +134,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Adicionar Telefone Celular" />
+                android:text="Adicionar Telefone Celular"
+                android:buttonTint="#FF9F0A"
+                android:textColor="#2A2A2C" />
 
             <EditText
                 android:id="@+id/celular_et"
@@ -128,7 +145,11 @@
                 android:hint="Telefone Celular"
                 android:autofillHints="phone"
                 android:inputType="phone"
-                android:visibility="gone" />
+                android:visibility="gone"
+                android:padding="12dp"
+                android:textColor="#2A2A2C"
+                android:textColorHint="#5C5C5F"
+                android:background="@drawable/field_background" />
 
         </LinearLayout>
 
@@ -137,8 +158,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sexo"
-            android:padding="5dp"
+            android:padding="12dp"
             android:layout_margin="5dp"
+            android:textColor="#2A2A2C"
+            android:background="@drawable/field_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/telefones_ll"/>
@@ -161,15 +184,18 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Masculino"
-                android:checked="true" />
+                android:checked="true"
+                android:textColor="#2A2A2C"
+                app:buttonTint="@color/radio_button_color" />
 
             <RadioButton
                 android:id="@+id/feminino_rb"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Feminino"
-                android:layout_weight="1" />
-
+                android:layout_weight="1"
+                android:textColor="#2A2A2C"
+                app:buttonTint="@color/radio_button_color" />
         </RadioGroup>
 
         <EditText
@@ -180,8 +206,11 @@
             android:inputType="none"
             android:focusable="false"
             android:clickable="true"
-            android:padding="5dp"
+            android:padding="12dp"
             android:layout_margin="5dp"
+            android:textColor="#2A2A2C"
+            android:textColorHint="#5C5C5F"
+            android:background="@drawable/field_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sexo_rg"/>
@@ -191,11 +220,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/formacoes"
-            android:padding="5dp"
+            android:padding="12dp"
             android:layout_margin="5dp"
+            android:background="@drawable/field_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/data_nascimento_et" />
+            app:layout_constraintTop_toBottomOf="@id/data_nascimento_et"/>
 
         <LinearLayout
             android:id="@+id/ano_ll"
@@ -211,7 +241,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Ano de Formatura/Conclusão"
-                android:inputType="number" />
+                android:inputType="number"
+                android:padding="12dp"
+                android:textColor="#2A2A2C"
+                android:textColorHint="#5C5C5F"
+                android:background="@drawable/field_background" />
         </LinearLayout>
 
         <LinearLayout
@@ -228,7 +262,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Instituição"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:textColor="#2A2A2C"
+                android:textColorHint="#5C5C5F"
+                android:background="@drawable/field_background" />
         </LinearLayout>
 
         <LinearLayout
@@ -245,14 +283,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Título da Monografia"
-                android:inputType="textCapSentences" />
+                android:inputType="textCapSentences"
+                android:padding="12dp"
+                android:textColor="#2A2A2C"
+                android:textColorHint="#5C5C5F"
+                android:background="@drawable/field_background" />
 
             <EditText
                 android:id="@+id/orientador_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Orientador"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:padding="12dp"
+                android:textColor="#2A2A2C"
+                android:textColorHint="#5C5C5F"
+                android:background="@drawable/field_background" />
         </LinearLayout>
 
         <EditText
@@ -264,18 +310,23 @@
             android:gravity="top"
             android:minLines="3"
             android:layout_margin="5dp"
-            android:padding="5dp"
+            android:padding="12dp"
+            android:textColor="#2A2A2C"
+            android:textColorHint="#5C5C5F"
+            android:background="@drawable/field_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titulo_orientador_ll" />
+            app:layout_constraintTop_toBottomOf="@id/formacao_sp"/>
 
         <Button
             android:id="@+id/salvar_bt"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Salvar"
-            android:padding="5dp"
+            android:padding="12dp"
             android:layout_margin="5dp"
+            android:backgroundTint="#FF9F0A"
+            android:textColor="#FCFCFC"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/vagas_et"/>
@@ -283,10 +334,12 @@
         <Button
             android:id="@+id/limpar_bt"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Limpar"
-            android:padding="5dp"
+            android:padding="12dp"
             android:layout_margin="5dp"
+            android:backgroundTint="#2A2A2C"
+            android:textColor="#FCFCFC"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/salvar_bt"/>
