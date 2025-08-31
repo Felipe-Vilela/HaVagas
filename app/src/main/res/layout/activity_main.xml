@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FCFCFC"
+    android:background="@color/off_white"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,10 +17,10 @@
             android:id="@+id/ha_vagas_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#2A2A2C"
+            android:background="@color/dark_slate_gray"
             android:gravity="center"
             android:text="Há Vagas"
-            android:textColor="#FCFCFC"
+            android:textColor="@color/off_white"
             android:textSize="30sp"
             android:paddingVertical="16dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,8 +36,8 @@
             android:hint="Nome"
             android:inputType="textPersonName"
             android:padding="12dp"
-            android:textColor="#2A2A2C"
-            android:textColorHint="#5C5C5F"
+            android:textColor="@color/dark_slate_gray"
+            android:textColorHint="@color/blue_gray"
             android:background="@drawable/field_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,8 +61,8 @@
                 android:hint="E-mail"
                 android:inputType="textEmailAddress"
                 android:padding="12dp"
-                android:textColor="#2A2A2C"
-                android:textColorHint="#5C5C5F"
+                android:textColor="@color/dark_slate_gray"
+                android:textColorHint="@color/blue_gray"
                 android:background="@drawable/field_background" />
 
             <CheckBox
@@ -71,8 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="Desejo receber e-mails com atualizações de oportunidades"
-                android:buttonTint="#FF9F0A"
-                android:textColor="#2A2A2C" />
+                android:buttonTint="@color/vibrant_orange"
+                android:textColor="@color/dark_slate_gray" />
         </LinearLayout>
 
         <LinearLayout
@@ -93,8 +93,8 @@
                 android:autofillHints="phone"
                 android:inputType="phone"
                 android:padding="12dp"
-                android:textColor="#2A2A2C"
-                android:textColorHint="#5C5C5F"
+                android:textColor="@color/dark_slate_gray"
+                android:textColorHint="@color/blue_gray"
                 android:background="@drawable/field_background" />
 
             <RadioGroup
@@ -116,7 +116,7 @@
                     android:layout_weight="1"
                     android:text="Comercial"
                     android:checked="true"
-                    android:textColor="#2A2A2C"
+                    android:textColor="@color/dark_slate_gray"
                     app:buttonTint="@color/radio_button_color"  />
 
                 <RadioButton
@@ -125,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:text="Residencial"
                     android:layout_weight="1"
-                    android:textColor="#2A2A2C"
+                    android:textColor="@color/dark_slate_gray"
                     app:buttonTint="@color/radio_button_color" />
             </RadioGroup>
 
@@ -135,8 +135,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="Adicionar Telefone Celular"
-                android:buttonTint="#FF9F0A"
-                android:textColor="#2A2A2C" />
+                android:buttonTint="@color/vibrant_orange"
+                android:textColor="@color/dark_slate_gray" />
 
             <EditText
                 android:id="@+id/celular_et"
@@ -147,8 +147,8 @@
                 android:inputType="phone"
                 android:visibility="gone"
                 android:padding="12dp"
-                android:textColor="#2A2A2C"
-                android:textColorHint="#5C5C5F"
+                android:textColor="@color/dark_slate_gray"
+                android:textColorHint="@color/blue_gray"
                 android:background="@drawable/field_background" />
 
         </LinearLayout>
@@ -158,10 +158,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sexo"
-            android:padding="12dp"
+            android:padding="5dp"
             android:layout_margin="5dp"
-            android:textColor="#2A2A2C"
-            android:background="@drawable/field_background"
+            android:textColor="@color/dark_slate_gray"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/telefones_ll"/>
@@ -185,7 +184,7 @@
                 android:layout_weight="1"
                 android:text="Masculino"
                 android:checked="true"
-                android:textColor="#2A2A2C"
+                android:textColor="@color/dark_slate_gray"
                 app:buttonTint="@color/radio_button_color" />
 
             <RadioButton
@@ -194,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:text="Feminino"
                 android:layout_weight="1"
-                android:textColor="#2A2A2C"
+                android:textColor="@color/dark_slate_gray"
                 app:buttonTint="@color/radio_button_color" />
         </RadioGroup>
 
@@ -208,8 +207,8 @@
             android:clickable="true"
             android:padding="12dp"
             android:layout_margin="5dp"
-            android:textColor="#2A2A2C"
-            android:textColorHint="#5C5C5F"
+            android:textColor="@color/dark_slate_gray"
+            android:textColorHint="@color/blue_gray"
             android:background="@drawable/field_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -243,8 +242,8 @@
                 android:hint="Ano de Formatura/Conclusão"
                 android:inputType="number"
                 android:padding="12dp"
-                android:textColor="#2A2A2C"
-                android:textColorHint="#5C5C5F"
+                android:textColor="@color/dark_slate_gray"
+                android:textColorHint="@color/blue_gray"
                 android:background="@drawable/field_background" />
         </LinearLayout>
 
@@ -264,8 +263,8 @@
                 android:hint="Instituição"
                 android:inputType="textPersonName"
                 android:padding="12dp"
-                android:textColor="#2A2A2C"
-                android:textColorHint="#5C5C5F"
+                android:textColor="@color/dark_slate_gray"
+                android:textColorHint="@color/blue_gray"
                 android:background="@drawable/field_background" />
         </LinearLayout>
 
@@ -285,8 +284,8 @@
                 android:hint="Título da Monografia"
                 android:inputType="textCapSentences"
                 android:padding="12dp"
-                android:textColor="#2A2A2C"
-                android:textColorHint="#5C5C5F"
+                android:textColor="@color/dark_slate_gray"
+                android:textColorHint="@color/blue_gray"
                 android:background="@drawable/field_background" />
 
             <EditText
@@ -296,8 +295,8 @@
                 android:hint="Orientador"
                 android:inputType="textPersonName"
                 android:padding="12dp"
-                android:textColor="#2A2A2C"
-                android:textColorHint="#5C5C5F"
+                android:textColor="@color/dark_slate_gray"
+                android:textColorHint="@color/blue_gray"
                 android:background="@drawable/field_background" />
         </LinearLayout>
 
@@ -311,8 +310,8 @@
             android:minLines="3"
             android:layout_margin="5dp"
             android:padding="12dp"
-            android:textColor="#2A2A2C"
-            android:textColorHint="#5C5C5F"
+            android:textColor="@color/dark_slate_gray"
+            android:textColorHint="@color/blue_gray"
             android:background="@drawable/field_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -325,8 +324,8 @@
             android:text="Salvar"
             android:padding="12dp"
             android:layout_margin="5dp"
-            android:backgroundTint="#FF9F0A"
-            android:textColor="#FCFCFC"
+            android:backgroundTint="@color/vibrant_orange"
+            android:textColor="@color/off_white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/vagas_et"/>
@@ -338,8 +337,8 @@
             android:text="Limpar"
             android:padding="12dp"
             android:layout_margin="5dp"
-            android:backgroundTint="#2A2A2C"
-            android:textColor="#FCFCFC"
+            android:backgroundTint="@color/dark_slate_gray"
+            android:textColor="@color/off_white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/salvar_bt"/>

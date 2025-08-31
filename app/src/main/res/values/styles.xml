@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="DatePickerTheme" parent="Theme.MaterialComponents.Light.Dialog">
-        <item name="colorPrimary">#FF9F0A</item>
-        <item name="colorAccent">#FF9F0A</item>
-        <item name="colorOnPrimary">#2A2A2C</item>
-        <item name="android:textColorPrimary">#2A2A2C</item>
-        <item name="android:headerBackground">#FF9F0A</item>
-        <item name="android:calendarTextColor">#2A2A2C</item>
+        <item name="colorPrimary">@color/vibrant_orange</item>
+        <item name="colorAccent">@color/vibrant_orange</item>
+        <item name="colorOnPrimary">@color/dark_slate_gray</item>
+        <item name="android:textColorPrimary">@color/dark_slate_gray</item>
+        <item name="android:headerBackground">@color/vibrant_orange</item>
+        <item name="android:calendarTextColor">@color/dark_slate_gray</item>
     </style>
 </resources>
