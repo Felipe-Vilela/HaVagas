@@ -22,9 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(activityMainBinding.root)
 
         with(activityMainBinding) {
-
-
-
             dataNascimentoEt.setOnClickListener {
                 val calendar = Calendar.getInstance()
                 val ano = calendar.get(Calendar.YEAR)
@@ -92,22 +89,37 @@ class MainActivity : AppCompatActivity() {
                 val desejaReceberEmails = receberEmailsCb.isChecked
                 val dataNascimento = dataNascimentoEt.text.toString()
 
-                val mensagemDoPopup =
-                    "Nome Completo: ${nomeCompleto}\n" +
-                    "E-mail:  ${email.ifEmpty { "Não Informado" }}\n" +
-                    "Deseja receber emails: ${if (desejaReceberEmails) "Sim" else "Não"}\n" +
-                    "Data de Nascimento: ${dataNascimento.ifEmpty { "Não selecionada" }}"
+                val formacaoSelecionada = formacaoSp.selectedItem.toString()
 
-                val builder = AlertDialog.Builder(this@MainActivity)
+                val builderMensagem = StringBuilder()
+                builderMensagem.appendLine("Nome Completo: ${nomeCompleto}\n")
+                builderMensagem.appendLine("E-mail: ${email.ifEmpty { "Não informado" }}\n")
+                builderMensagem.appendLine("Deseja receber e-mails: ${if (desejaReceberEmails) "Sim" else "Não"}\n")
+                builderMensagem.appendLine("Data de Nascimento: ${dataNascimento.ifEmpty { "Não selecionada" }}\n")
+                builderMensagem.appendLine("Formação: $formacaoSelecionada\n")
 
-                builder.setTitle("Dados do Formulário")
-                builder.setMessage(mensagemDoPopup)
-
-                builder.setPositiveButton("OK") { dialog, _ ->
-                    dialog.dismiss()
+                when (formacaoSp.selectedItemPosition) {
+                    0, 1 -> {
+                        builderMensagem.appendLine("Ano de Conclusão: ${anoEt.text.ifEmpty { "Não informado" }}\n")
+                    }
+                    2, 3 -> {
+                        builderMensagem.appendLine("Ano de Conclusão: ${anoEt.text.ifEmpty { "Não informado" }}\n")
+                        builderMensagem.appendLine("Instituição: ${instituicaoEt.text.ifEmpty { "Não informado" }}\n")
+                    }
+                    4, 5 -> {
+                        builderMensagem.appendLine("Ano de Conclusão: ${anoEt.text.ifEmpty { "Não informado" }}\n")
+                        builderMensagem.appendLine("Instituição: ${instituicaoEt.text.ifEmpty { "Não informado" }}\n")
+                        builderMensagem.appendLine("Título da Monografia: ${tituloMonografiaEt.text.ifEmpty { "Não informado" }}\n")
+                        builderMensagem.appendLine("Orientador: ${orientadorEt.text.ifEmpty { "Não informado" }}\n")
+                    }
                 }
 
-                val dialog = builder.create()
+                val dialog = AlertDialog.Builder(this@MainActivity)
+                    .setTitle("Dados do Formulário\n")
+                    .setMessage(builderMensagem.toString())
+                    .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                    .create()
+
                 dialog.show()
             }
         }
