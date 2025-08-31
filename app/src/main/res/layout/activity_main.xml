@@ -294,11 +294,19 @@
                 android:layout_height="wrap_content"
                 android:hint="Orientador"
                 android:inputType="textPersonName"
+                android:layout_marginTop="5dp"
                 android:padding="12dp"
                 android:textColor="@color/dark_slate_gray"
                 android:textColorHint="@color/blue_gray"
                 android:background="@drawable/field_background" />
         </LinearLayout>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/formacao_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="ano_ll,instituicao_ll,titulo_orientador_ll" />
 
         <EditText
             android:id="@+id/vagas_et"
@@ -315,7 +323,7 @@
             android:background="@drawable/field_background"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/formacao_sp"/>
+            app:layout_constraintTop_toBottomOf="@id/formacao_barrier"/>
 
         <Button
             android:id="@+id/salvar_bt"

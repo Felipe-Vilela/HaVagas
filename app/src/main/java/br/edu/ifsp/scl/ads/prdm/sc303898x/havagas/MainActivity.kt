@@ -2,6 +2,9 @@ package br.edu.ifsp.scl.ads.prdm.sc303898x.havagas
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.scl.ads.prdm.sc303898x.havagas.databinding.ActivityMainBinding
@@ -19,6 +22,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(activityMainBinding.root)
 
         with(activityMainBinding) {
+
+
+
             dataNascimentoEt.setOnClickListener {
                 val calendar = Calendar.getInstance()
                 val ano = calendar.get(Calendar.YEAR)
@@ -38,6 +44,48 @@ class MainActivity : AppCompatActivity() {
                 )
                 datePickerDialog.show()
             }
+
+            formacaoSp.onItemSelectedListener =
+                object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        anoLl.visibility = View.GONE
+                        instituicaoLl.visibility = View.GONE
+                        tituloOrientadorLl.visibility = View.GONE
+
+                        anoEt.setText("")
+                        instituicaoEt.setText("")
+                        tituloMonografiaEt.setText("")
+                        orientadorEt.setText("")
+
+                        when (position) {
+                            0, 1 -> {
+                                anoLl.visibility = View.VISIBLE
+                            }
+
+                            2, 3 -> {
+                                anoLl.visibility = View.VISIBLE
+                                instituicaoLl.visibility = View.VISIBLE
+                            }
+
+                            4, 5 -> {
+                                anoLl.visibility = View.VISIBLE
+                                instituicaoLl.visibility = View.VISIBLE
+                                tituloOrientadorLl.visibility = View.VISIBLE
+                            }
+                        }
+                    }
+
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
+                        TODO("Not yet implemented")
+                    }
+
+                }
+
             salvarBt.setOnClickListener {
                 val nomeCompleto = nomeEt.text.toString()
                 val email = emailEt.text.toString()
