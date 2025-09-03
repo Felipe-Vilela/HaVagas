@@ -144,6 +144,23 @@ class MainActivity : AppCompatActivity() {
 
                 dialog.show()
             }
+
+            limparBt.setOnClickListener {
+                nomeEt.setText("")
+                emailEt.setText("")
+                telefoneFixoEt.setText("")
+                celularEt.setText("")
+                dataNascimentoEt.setText("")
+                vagasEt.setText("")
+                anoEt.setText("")
+                instituicaoEt.setText("")
+                tituloMonografiaEt.setText("")
+                orientadorEt.setText("")
+                adicionarCelularCb.isChecked = false
+                formacaoSp.setSelection(0)
+                tipoTelefoneRg.check(R.id.comercial_rb)
+                sexoRg.check(R.id.masculino_rb)
+            }
         }
     }
 }
