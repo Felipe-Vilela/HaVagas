@@ -157,6 +157,7 @@ class MainActivity : AppCompatActivity() {
                 tituloMonografiaEt.setText("")
                 orientadorEt.setText("")
                 adicionarCelularCb.isChecked = false
+                receberEmailsCb.isChecked = false
                 formacaoSp.setSelection(0)
                 tipoTelefoneRg.check(R.id.comercial_rb)
                 sexoRg.check(R.id.masculino_rb)
