@@ -105,40 +105,83 @@ class MainActivity : AppCompatActivity() {
                 val sexoSelecionado = findViewById<RadioButton>(sexo).text.toString()
                 val dataNascimento = dataNascimentoEt.text.toString()
                 val formacaoSelecionada = formacaoSp.selectedItem.toString()
+                val vagas = vagasEt.text.toString()
 
                 val builderMensagem = StringBuilder()
-                builderMensagem.appendLine("Nome Completo: ${nomeCompleto}")
-                builderMensagem.appendLine("E-mail: ${email.ifEmpty { "Não informado" }}")
-                builderMensagem.appendLine("Deseja receber e-mails: ${if (desejaReceberEmails) "Sim" else "Não"}")
-                builderMensagem.appendLine("Telefone Fixo: ${telefoneFixoTexto} - ${telefoneFixoSelecionado}")
+
+                if (nomeCompleto.isNotEmpty()) {
+                    builderMensagem.appendLine("Nome Completo: $nomeCompleto")
+                }
+
+                if (email.isNotEmpty()) {
+                    builderMensagem.appendLine("E-mail: $email")
+                    builderMensagem.appendLine("Deseja receber e-mails: ${if (desejaReceberEmails) "Sim" else "Não"}")
+                }
+
+                if (telefoneFixoTexto.isNotEmpty()) {
+                    builderMensagem.appendLine("Telefone Fixo: $telefoneFixoTexto - $telefoneFixoSelecionado")
+                }
 
                 if (adicionarCelularCb.isChecked && celular.isNotEmpty()) {
                     builderMensagem.appendLine("Celular: $celular")
                 }
 
-                builderMensagem.appendLine("Sexo: ${sexoSelecionado}")
-                builderMensagem.appendLine("Data de Nascimento: ${dataNascimento.ifEmpty { "Não selecionada" }}")
-                builderMensagem.appendLine("Formação: $formacaoSelecionada")
+                if(anoEt.text.isNotEmpty()) {
+                    builderMensagem.appendLine("Formação: $formacaoSelecionada")
+                }
+
+                if (dataNascimento.isNotEmpty()) {
+                    builderMensagem.appendLine("Data de Nascimento: $dataNascimento")
+                }
+
+                if (sexoSelecionado == "Feminino" || dataNascimento.isNotEmpty()) {
+                    builderMensagem.appendLine("Sexo: $sexoSelecionado")
+                }
 
                 when (formacaoSp.selectedItemPosition) {
                     0, 1 -> {
-                        builderMensagem.appendLine("Ano de Conclusão: ${anoEt.text.ifEmpty { "Não informado" }}")
+                        if (anoEt.text.isNotEmpty()) {
+                            builderMensagem.appendLine("Ano de Conclusão: ${anoEt.text}")
+                        }
                     }
                     2, 3 -> {
-                        builderMensagem.appendLine("Ano de Conclusão: ${anoEt.text.ifEmpty { "Não informado" }}")
-                        builderMensagem.appendLine("Instituição: ${instituicaoEt.text.ifEmpty { "Não informado" }}")
+                        if (anoEt.text.isNotEmpty()) {
+                            builderMensagem.appendLine("Ano de Conclusão: ${anoEt.text}")
+                        }
+                        if (instituicaoEt.text.isNotEmpty()) {
+                            builderMensagem.appendLine("Instituição: ${instituicaoEt.text}")
+                        }
                     }
                     4, 5 -> {
-                        builderMensagem.appendLine("Ano de Conclusão: ${anoEt.text.ifEmpty { "Não informado" }}")
-                        builderMensagem.appendLine("Instituição: ${instituicaoEt.text.ifEmpty { "Não informado" }}")
-                        builderMensagem.appendLine("Título da Monografia: ${tituloMonografiaEt.text.ifEmpty { "Não informado" }}")
-                        builderMensagem.appendLine("Orientador: ${orientadorEt.text.ifEmpty { "Não informado" }}")
+                        if (anoEt.text.isNotEmpty()) {
+                            builderMensagem.appendLine("Ano de Conclusão: ${anoEt.text}")
+                        }
+                        if (instituicaoEt.text.isNotEmpty()) {
+                            builderMensagem.appendLine("Instituição: ${instituicaoEt.text}")
+                        }
+                        if (tituloMonografiaEt.text.isNotEmpty()) {
+                            builderMensagem.appendLine("Título da Monografia: ${tituloMonografiaEt.text}")
+                        }
+                        if (orientadorEt.text.isNotEmpty()) {
+                            builderMensagem.appendLine("Orientador: ${orientadorEt.text}")
+                        }
                     }
+                }
+
+                if (vagas.isNotEmpty()) {
+                    builderMensagem.appendLine("Vagas de interesse:\n$vagas")
+                }
+
+                val dados: String
+                if (builderMensagem.isEmpty()) {
+                    dados = "Não foram informados dados."
+                } else {
+                    dados = builderMensagem.toString()
                 }
 
                 val dialog = AlertDialog.Builder(this@MainActivity)
                     .setTitle("Dados do Formulário")
-                    .setMessage(builderMensagem.toString())
+                    .setMessage(dados)
                     .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
                     .create()
 
