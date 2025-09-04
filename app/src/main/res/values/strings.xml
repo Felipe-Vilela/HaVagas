@@ -1,5 +1,25 @@
 <resources>
     <string name="app_name">HaVagas</string>
+    <string name="ha_vagas">Há Vagas</string>
+    <string name="nome">Nome</string>
+    <string name="e_mail">E-mail</string>
+    <string name="receber_email">Desejo receber e-mails com atualizações de oportunidades</string>
+    <string name="telefone_fixo">Telefone Fixo</string>
+    <string name="comercial">Comercial</string>
+    <string name="residencial">Residencial</string>
+    <string name="adicionar_celular">Adicionar Telefone Celular</string>
+    <string name="telefone_celular">Telefone Celular</string>
+    <string name="sexo">Sexo</string>
+    <string name="masculino">Masculino</string>
+    <string name="feminino">Feminino</string>
+    <string name="data_nascimento">Data de Nascimento</string>
+    <string name="formacao_conclusao">Ano de Formatura/Conclusão</string>
+    <string name="instituicao">Instituição</string>
+    <string name="titulo_monografia">Título da Monografia</string>
+    <string name="orientador">Orientador</string>
+    <string name="vagas_de_interesse">Vagas de interesse</string>
+    <string name="salvar">Salvar</string>
+    <string name="limpar">Limpar</string>
     <string-array name="formacoes">
         <item>Fundamental</item>
         <item>Médio</item>
