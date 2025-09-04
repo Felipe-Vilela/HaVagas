@@ -126,16 +126,16 @@ class MainActivity : AppCompatActivity() {
                     builderMensagem.appendLine("Celular: $celular")
                 }
 
-                if(anoEt.text.isNotEmpty()) {
-                    builderMensagem.appendLine("Formação: $formacaoSelecionada")
-                }
-
                 if (dataNascimento.isNotEmpty()) {
                     builderMensagem.appendLine("Data de Nascimento: $dataNascimento")
                 }
 
                 if (sexoSelecionado == "Feminino" || dataNascimento.isNotEmpty()) {
                     builderMensagem.appendLine("Sexo: $sexoSelecionado")
+                }
+
+                if(anoEt.text.isNotEmpty()) {
+                    builderMensagem.appendLine("Formação: $formacaoSelecionada")
                 }
 
                 when (formacaoSp.selectedItemPosition) {
